@@ -2,17 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-suba',
+  selector: 'app-login',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      suba works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class SubaComponent {
+export class LoginComponent {
 
 }

@@ -2,17 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-subb',
+  selector: 'app-about',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      subb works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css']
 })
-export class SubbComponent {
+export class AboutComponent {
 
 }
