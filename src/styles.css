@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+asl-google-signin-button div{
+    display:grid;
+    justify-content: center;
+    text-align:center;
+}

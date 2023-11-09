@@ -3,16 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoteComponent } from './components/note/note.component';
 import { ButtonComponent } from './components/button/button.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotesService } from './services/notes.service';
+import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
-import {
-  SocialLoginModule,
-  SocialAuthServiceConfig,
-  GoogleLoginProvider,
-} from "@abacritt/angularx-social-login";
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -24,25 +23,27 @@ import {
     ButtonComponent,
     NavbarComponent,
     HttpClientModule,
-    
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [NotesService,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
-        autoLogin: false,
+        autoLogin: true,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('120362338082-er78a9gih6t7rga338o7p6g8nef60m8g.apps.googleusercontent.com')
+            provider: new GoogleLoginProvider(
+              '120362338082-er78a9gih6t7rga338o7p6g8nef60m8g.apps.googleusercontent.com'
+            )
           }
         ],
         onError: (err) => {
           console.error(err);
-        },
-        } as SocialAuthServiceConfig,
-      } 
-  
+        }
+      } as SocialAuthServiceConfig,
+    },LoginService
   ],
   bootstrap: [AppComponent]
 })
