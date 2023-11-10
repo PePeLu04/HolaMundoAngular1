@@ -1,12 +1,12 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-    <div class="form-group">
-      <label>Título</label>
-      <input #title type="text" class="form-control" formControlName="title" placeholder="Título">
-    </div>
-    <div class="form-group">
-      <label>Descripción</label>
-      <input type="text" class="form-control" formControlName="description" placeholder="Descripción">
-    </div>
-    <input type="hidden" formControlName="id">
-    <button type="submit" class="btn btn-primary" [disabled]="this.form.status!='VALID'">Guardar</button>
+<form [formGroup]="form" (ngSubmit)="submit()" class="my-form">
+  <div class="form-group">
+    <label for="title">Título</label>
+    <input #title type="text" class="form-control" formControlName="title" id="title" placeholder="Ingresa el título">
+  </div>
+  <div class="form-group">
+    <label for="description">Descripción</label>
+    <input type="text" class="form-control" formControlName="description" id="description" placeholder="Ingresa la descripción">
+  </div>
+  <input type="hidden" formControlName="id">
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Guardar</button>
 </form>

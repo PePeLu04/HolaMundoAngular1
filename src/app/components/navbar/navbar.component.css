@@ -1,0 +1,49 @@
+/* Estilos generales de la barra de navegación */
+.navbar {
+    background-color: #1c78d4; /* Color de fondo */
+    box-shadow: 0 2px 4px rgba(42, 40, 40, 0.1); /* Sombra */
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para el enlace de la marca */
+  .navbar-brand {
+    font-weight: bold;
+    color: #343a40; /* Color del texto */
+  }
+  
+  /* Estilo para los enlaces de navegación */
+  .navbar-nav .nav-link {
+    color: #343a40; /* Color del texto */
+  }
+  
+  /* Estilo para el enlace activo */
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+  }
+  
+  /* Estilo para el botón del toggler */
+  .navbar-toggler {
+    border-color: #1d8690; /* Color del borde */
+  }
+  
+  /* Estilo para el dropdown */
+  .navbar-nav .dropdown-menu {
+    background-color: #f8f9fa; /* Color de fondo del menú desplegable */
+    border: 1px solid #dee2e6; /* Borde del menú desplegable */
+  }
+  
+  /* Estilo para los items del dropdown */
+  .navbar-nav .dropdown-item {
+    color: #343a40; /* Color del texto del item */
+  }
+  
+  /* Estilo para el separador del dropdown */
+  .navbar-nav .dropdown-divider {
+    border-color: #dee2e6; /* Color del separador */
+  }
+  
+  /* Estilo para el dropdown activo */
+  .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
